@@ -23,10 +23,10 @@ exa bat fastfetch lsb-release
 ttf-jetbrains-mono ttf-jetbrains-mono-nerd 
 ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
 git lazygit openssh go
-neovim emacs firefox
+neovim emacs 
 mesa xf86-video-amdgpu vulkan-radeon
 gnome gnome-extra gnome-browser-connector
-cups ghostscript system-config-printer
+cups ghostscript
 "
 pacman -S --noconfirm --needed $PACKAGES
 
@@ -82,6 +82,9 @@ systemctl enable libvirtd.service
 
 ### powerline-go
 sudo -u jotix go install github.com/justjanne/powerline-go@latest
+
+### google-chrome
+sudo -u jotix flatpak install com.google.Chrome
 
 ### printer drivers
 pacman -U --noconfirm /root/printer-drivers/*.zst
