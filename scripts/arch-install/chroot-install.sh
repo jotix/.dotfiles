@@ -80,12 +80,14 @@ systemctl enable NetworkManager
 systemctl enable ntpdate
 systemctl enable libvirtd.service
 
+### printer drivers
+pacman -U --noconfirm /root/printer-drivers/*.zst
+
 ### powerline-go
 sudo -u jotix go install github.com/justjanne/powerline-go@latest
 
 ### google-chrome
-sudo -u jotix flatpak install com.google.Chrome
+sudo -u jotix flatpak install flathub com.google.Chrome
 
-### printer drivers
-pacman -U --noconfirm /root/printer-drivers/*.zst
-
+### gnome extension manager
+sudo -u jotix flatpak install flathub com.mattjakeman.ExtensionManager
