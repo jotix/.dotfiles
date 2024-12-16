@@ -83,11 +83,3 @@ systemctl enable libvirtd.service
 ### printer drivers
 pacman -U --noconfirm /root/printer-drivers/*.zst
 
-### powerline-go
-sudo -u jotix go install github.com/justjanne/powerline-go@latest
-
-### google-chrome
-sudo -u jotix flatpak install flathub com.google.Chrome
-
-### gnome extension manager
-sudo -u jotix flatpak install flathub com.mattjakeman.ExtensionManager
