@@ -62,7 +62,7 @@ passwd
 echo -e "\nSET JOTIX PASSWORD\n"
 useradd -m -G wheel -s /bin/bash jotix
 passwd jotix
-if [[ $HOST == "ffm-arch" ]]; then
+if [[ $HOSTNAME == "ffm-arch" ]]; then
     useradd -m -s /bin/bash filofem
     echo -e "\nSET FILOFEM PASSWORD\n"
     passwd filofem
