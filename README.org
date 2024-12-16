@@ -6,8 +6,7 @@
 * Table of Contents :TOC:
 - [[#arch-linux][Arch Linux]]
 - [[#general-notes][General Notes]]
-  - [[#impresora-brother-hl-1212w-connection][Impresora Brother HL-1212W connection]]
-  - [[#impresora-hprt-tp806l][Impresora HPRT TP806L]]
+  - [[#network-printers][Network Printers]]
   - [[#youtube-ublock-shorts-filter][YouTube uBlock shorts filter]]
   - [[#launch-a-virtual-monitor-with-kwin_wayland][Launch a virtual monitor with kwin_wayland]]
   - [[#dd-iso-file-in-usb-device][dd iso file in USB device]]
@@ -27,14 +26,14 @@ cd jotix-config/scripts/arch-install
 
 * General Notes
 
-** Impresora Brother HL-1212W connection
+** Network Printers
 
 Edit the Device URI in /etc/cups/printers.conf
 
 #+begin_src sh
 .
 .
-DeviceURI ipp://192.168.0.7/ipp/port1
+DeviceURI ...........
 .
 .
 #+end_src
@@ -44,20 +43,16 @@ Restart cups
 sudo systemctl restart cups
 #+end_src
 
-** Impresora HPRT TP806L
+*** Impresora Brother HL-1212W connection
 
-Edit the Device URI in /etc/cups/printers.conf
+#+begin_src sh
+ipp://192.168.0.7/ipp/port1
+#+end_src
 
-#+begin_src
-.
-.
+*** Impresora HPRT TP806L
+
+#+begin_src sh
 device URI socket://192.168.0.2
-.
-.
-#+end_src
-Restart cups
-#+begin_src sh
-sudo systemctl restart cups
 #+end_src
 
 ** YouTube uBlock shorts filter
