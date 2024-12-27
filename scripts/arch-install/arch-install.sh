@@ -125,6 +125,11 @@ echo $HOST > /mnt/etc/hostname
 cp chroot-install.sh /mnt/root
 cp -rv printer-drivers /mnt/root
 arch-chroot /mnt /root/chroot-install.sh
+if [[ $HOST == "ffm-arch" ]]; then
+    echo -e "\nSET FILOFEM PASSWORD\n"
+    arch-chroot /mnt useradd -m -s /bin/bash filofem
+    arch-chroot /mnt passwd filofem
+fi
 
 ### unmount & reboot
 echo "Installation finished, you can do some final asjustements now or reboot and use the new system:
