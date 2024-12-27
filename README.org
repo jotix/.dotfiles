@@ -24,6 +24,17 @@ cd jotix-config/scripts/arch-install
 ./arch-install.sh
 #+end_src
 
+Post installation
+
+#+begin_src sh
+/mnt/jtx-ssd/jotix/jotix-install
+cd ~
+git clone git@github.com:jotix/.dotfiles
+cd dotfiles
+stow .
+.scripts/arch-install/jotix-install.sh
+#+end_src
+
 * General Notes
 
 ** Network Printers
