@@ -1,0 +1,7 @@
+--verbose
+--no-folding
+--target=~/
+--ignore=.stowrc
+--ignore=./.git
+--ignore=README.org
+--ignore=unstow.sh
