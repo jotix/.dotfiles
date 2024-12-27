@@ -62,11 +62,6 @@ passwd
 echo -e "\nSET JOTIX PASSWORD\n"
 useradd -m -G wheel -s /bin/bash jotix
 passwd jotix
-if [[ $HOSTNAME == "ffm-arch" ]]; then
-    useradd -m -s /bin/bash filofem
-    echo -e "\nSET FILOFEM PASSWORD\n"
-    passwd filofem
-fi
 
 ### install & config libvirt
 pacman -S --noconfirm --ask=4 libvirt iptables-nft dnsmasq dmidecode virt-manager qemu-full
