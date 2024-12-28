@@ -30,7 +30,8 @@
   (interactive)
   (shell-command "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 #+end_src
-* exwm config
+* exwm conf
+
 #+begin_src emacs-lisp 
 (use-package exwm
   :config
@@ -72,16 +73,18 @@
           ([s-right] . windmove-right)
           ([s-up] . windmove-up)
           ([s-down] . windmove-down))))
-;;(exwm-enable) ;; is enabled in .xinitrc
+(exwm-enable)
+
+(load-file "/home/jotix/.emacs.d/init.el")
 #+end_src
+
 * exwm desktop file
-#+begin_src conf :tangle no
-	#"/sudo::/usr/share/xsessions/exwm.desktop" :mkdirp yes
+
+#+begin_src sh
 [Desktop Entry]
-Name=EXWM
+Name=EXWM.
 Comment=Emacs Window Manager
-Exec=sh /home/daviwil/.emacs.d/exwm/start-exwm.sh
-TryExec=sh
+Exec=emacs -l "/home/jotix/.emacs.d/exwm.el"
 Type=Application
 X-LightDM-DesktopName=exwm
 DesktopNames=exwm

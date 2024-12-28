@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=EXWM.
+Comment=Emacs Window Manager
+Exec=emacs -l "/home/jotix/.emacs.d/exwm.el"
+Type=Application
+X-LightDM-DesktopName=exwm
+DesktopNames=exwm

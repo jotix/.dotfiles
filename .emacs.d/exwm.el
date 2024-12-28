@@ -59,4 +59,14 @@
           ([s-right] . windmove-right)
           ([s-up] . windmove-up)
           ([s-down] . windmove-down))))
-;;(exwm-enable) ;; is enabled in .xinitrc
+(exwm-enable)
+
+(load-file "/home/jotix/.emacs.d/init.el")
+
+[Desktop Entry]
+Name=EXWM.
+Comment=Emacs Window Manager
+Exec=emacs -l "/home/jotix/.emacs.d/exwm.el"
+Type=Application
+X-LightDM-DesktopName=exwm
+DesktopNames=exwm
