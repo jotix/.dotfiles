@@ -20,7 +20,7 @@ Clone this repo and execute the installer.
 #+begin_src sh
 pacman -Sy git
 git clone http://github.com/jotix/jotix-config.git
-cd jotix-config/scripts/arch-install
+cd arch-config/arch-install
 ./arch-install.sh
 #+end_src
 
@@ -29,10 +29,9 @@ Post installation
 #+begin_src sh
 /mnt/jtx-ssd/jotix/jotix-install
 cd ~
-git clone git@github.com:jotix/.dotfiles
-cd dotfiles
+git clone git@github.com:jotix/arch-config
+cd arch-config/dotfiles
 stow .
-.scripts/arch-install/jotix-install.sh
 #+end_src
 
 * General Notes

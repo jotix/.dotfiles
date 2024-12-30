@@ -11,6 +11,23 @@ sed -i -e 's/#es_AR.UTF-8/es_AR.UTF-8/g' /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 > etc/locale.conf
 
+### Desktop Environment ########################################################
+
+DESKTOP=""
+
+while [[ $DESKTOP != "plasma" && $DESKTOP != "gnome" ]]
+do
+  read -p "Wich Desktop Enviroment install? (plasma/gnome): " DESKTOP
+done
+
+if [[ DESKTOP == "plasma" ]]; then
+    pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
+    systemctl enable sddm
+else
+    pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector
+    systemctl enable gdm
+fi
+
 ### install packages ##########################################################
 PACKAGES="
 networkmanager ntp
