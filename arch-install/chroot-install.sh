@@ -42,7 +42,7 @@ ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
 git lazygit openssh go
 neovim emacs stow zed
 mesa xf86-video-amdgpu vulkan-radeon
-cups ghostscript
+cups ghostscript mpv
 "
 pacman -S --noconfirm --needed $PACKAGES
 
