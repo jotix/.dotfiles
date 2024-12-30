@@ -28,7 +28,7 @@ alias gr='gitroot'
 alias camara='mpv rtsp://jujodeve:SuperJoti3275@192.168.0.5/stream1 --profile=low-latency --no-audio'
 
 ### cd to config folder
-alias cdc='cd ~/.dotfiles'
+alias cdc='cd ~/arch-config'
 
 ### alias nvim
 alias vim=nvim
