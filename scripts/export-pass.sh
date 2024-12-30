@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # export passwords to external file
 
 shopt -s nullglob globstar
