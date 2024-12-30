@@ -32,11 +32,11 @@ Restart cups
     sudo systemctl restart cups
 
 
-### Impresora Brother HL-1212W connection
+Impresora Brother HL-1212W connection
 
     ipp://192.168.0.7/ipp/port1
 
-### Impresora HPRT TP806L
+Impresora HPRT TP806L
 
     socket://192.168.0.2
 
