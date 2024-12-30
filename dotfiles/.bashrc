@@ -25,7 +25,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias gr='gitroot'
 
 ### camara negocio
-alias camara='mpv rtsp://jujodeve:SuperJoti3275@192.168.0.5/stream1 --profile=low-latency --no-audio'
+alias camara='mpv rtsp://jujodeve:SuperJoti3275@192.168.0.6/stream1 --profile=low-latency --no-audio'
 
 ### cd to config folder
 alias cdc='cd ~/arch-config'
