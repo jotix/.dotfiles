@@ -25,7 +25,6 @@ ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
 git lazygit openssh go
 neovim emacs firefox stow
 mesa xf86-video-amdgpu vulkan-radeon
-gnome gnome-extra gnome-browser-connector
 cups ghostscript
 "
 pacman -S --noconfirm --needed $PACKAGES
@@ -69,7 +68,6 @@ usermod -a -G libvirt jotix
 
 ### enable services
 systemctl enable fstrim.timer
-systemctl enable gdm
 systemctl enable cups.service
 systemctl enable NetworkManager
 systemctl enable ntpdate
