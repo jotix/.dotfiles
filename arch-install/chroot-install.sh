@@ -37,10 +37,10 @@ unzip p7zip
 base-devel cmake sudo
 less man-pages man-db
 exa bat fastfetch lsb-release
-ttf-jetbrains-mono ttf-jetbrains-mono-nerd 
+ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
 git lazygit openssh go
-neovim emacs firefox stow
+neovim emacs stow zed
 mesa xf86-video-amdgpu vulkan-radeon
 cups ghostscript
 "
@@ -92,4 +92,3 @@ systemctl enable libvirtd.service
 
 ### printer drivers
 pacman -U --noconfirm /root/printer-drivers/*.zst
-
