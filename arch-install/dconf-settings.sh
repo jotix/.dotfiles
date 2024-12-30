@@ -10,4 +10,5 @@ dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu:minimize,m
 dconf write /org/gnome/Console/last-window-size '(1200, 900)'
 dconf write /org/gnome/shell/favorite-apps "['com.google.Chrome.desktop', \
 'org.gnome.Nautilus.desktop', 'dev.zed.Zed.desktop', 'org.gnome.Extensions.desktop', \
-'org.gnome.Console.desktop', 'com.valvesoftware.Steam.desktop', 'org.gnome.Settings.desktop']"
+'org.gnome.Console.desktop', 'com.valvesoftware.Steam.desktop', 'org.gnome.Settings.desktop', \
+'com.mattjakeman.ExtensionManager.desktop']"
