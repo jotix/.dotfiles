@@ -15,7 +15,8 @@ dconf write /org/gnome/shell/favorite-apps "[\
     'org.gnome.Console.desktop', \
     'com.valvesoftware.Steam.desktop', \
     'org.gnome.Settings.desktop', \
-    'com.mattjakeman.ExtensionManager.desktop']"
+    'com.mattjakeman.ExtensionManager.desktop', \
+    'org.gnome.Calculator.desktop']"
 
 dconf write /org/gnome/desktop/interface/cursor-theme "'Adwaita'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Adwaita'"
