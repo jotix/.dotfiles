@@ -14,5 +14,9 @@
     "light": "One Light",
     "dark": "One Dark"
   },
-  "buffer_font_family": "Source Code Pro"
+  "buffer_font_family": "Source Code Pro",
+  "terminal": {
+    "font_family": "Source Code Pro",
+    "line_height": "standard"
+  }
 }
