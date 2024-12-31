@@ -26,3 +26,5 @@ dconf write /org/gnome/shell/enabled-extensions "[\
     'dash-to-dock@micxgx.gmail.com', \
     'apps-menu@gnome-shell-extensions.gcampax.github.com', \
     'tiling-assistant@leleat-on-github']"
+
+dconf write /org/gnome/desktop/input-sources/sources "[('xkb', 'us+altgr-intl')]"
