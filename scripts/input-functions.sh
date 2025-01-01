@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ### bash input functions
 
 ### read y or n from keyboard

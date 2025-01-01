@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 jtx-stow(){
   stow  --stow --dir=./dotfiles --target=$HOME --no-folding . $@
@@ -21,4 +21,3 @@ fi
 ### stowing the dotfiles
 echo "stowing dotfiles..."
 jtx-stow -v
-
