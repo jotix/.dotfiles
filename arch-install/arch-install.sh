@@ -121,15 +121,91 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ### network configuration
 echo $HOST > /mnt/etc/hostname
 
-### chroot
-cp chroot-install.sh /mnt/root
-cp -rv printer-drivers /mnt/root
-arch-chroot /mnt /root/chroot-install.sh
-if [[ $HOST == "ffm-arch" ]]; then
-    echo -e "\nSET FILOFEM PASSWORD\n"
-    arch-chroot /mnt useradd -m -s /bin/bash filofem
-    arch-chroot /mnt passwd filofem
-fi
+### enable parallel downloads in new installation
+sed -i -e 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /mnt/etc/pacman.conf
+
+### chroot installation #######################################################
+
+### chr function
+chr() {
+  arch-chroot /mnt $@
+}
+
+### locale config
+chr ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+chr hwclock --systohc
+sed -i -e 's/#en_US.UTF-8/en_US.UTF-8/g' /mnt/etc/locale.gen
+sed -i -e 's/#es_AR.UTF-8/es_AR.UTF-8/g' /mnt/etc/locale.gen
+chr locale-gen
+echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
+
+### Desktop Environment ########################################################
+
+# pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
+# systemctl enable sddm
+chr pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
+chr systemctl enable gdm
+
+### install packages ##########################################################
+PACKAGES="
+networkmanager ntp
+exfatprogs ntfs-3g dosfstools btrfs-progs
+efibootmgr amd-ucode
+unzip p7zip
+base-devel cmake sudo
+less man-pages man-db
+exa bat fastfetch lsb-release
+ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
+git lazygit openssh go
+neovim emacs stow zed
+mesa xf86-video-amdgpu vulkan-radeon
+cups ghostscript mpv
+"
+chr pacman -S --noconfirm --needed $PACKAGES
+
+### config the bootloader
+chr bootctl install
+echo -e "default  arch.conf
+timeout  5
+console-mode max
+editor   no
+" > /mnt/boot/loader/loader.conf
+
+echo -e "title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=LABEL=Arch rootflags=subvol=/@ rootfstype=btrfs rw
+" > /mnt/boot/loader/entries/arch.conf
+
+echo -e "title   Arch Linux (fallback initramfs)
+linux   /vmlinuz-linux
+initrd  /amd-ucode.img
+initrd  /initramfs-linux-fallback.img
+options root=LABEL=Arch rootflags=subvol=/@ rootfstype=btrfs rw
+" > /mnt/boot/loader/entries/arch-fallback.conf
+
+### config sudo
+sed -i -e 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /mnt/etc/sudoers
+
+### set the password & users
+echo -e "\nSET ROOT PASSWORD\n"
+chr passwd
+echo -e "\nSET JOTIX PASSWORD\n"
+chr useradd -m -G wheel -s /bin/bash jotix
+chr passwd jotix
+
+### install & config libvirt
+chr pacman -S --noconfirm --ask=4 libvirt iptables-nft dnsmasq dmidecode virt-manager qemu-full
+chr usermod -a -G libvirt jotix
+
+### enable services
+chr systemctl enable fstrim.timer
+chr systemctl enable cups.service
+chr systemctl enable NetworkManager
+chr systemctl enable ntpdate
+chr systemctl enable libvirtd.service
 
 ### unmount & reboot
 echo "Installation finished, you can do some final asjustements now or reboot and use the new system:

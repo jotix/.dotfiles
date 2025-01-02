@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+### printer drivers
+sudo pacman -U --noconfirm ./printer-drivers/*.zst
+
 ### powerline-go
 go install github.com/justjanne/powerline-go@latest
 
