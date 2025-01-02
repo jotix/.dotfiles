@@ -13,20 +13,10 @@ echo LANG=en_US.UTF-8 > etc/locale.conf
 
 ### Desktop Environment ########################################################
 
-DESKTOP=""
-
-while [[ $DESKTOP != "plasma" && $DESKTOP != "gnome" ]]
-do
-  read -p "Wich Desktop Enviroment install? (plasma/gnome): " DESKTOP
-done
-
-if [[ DESKTOP == "plasma" ]]; then
-    pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
-    systemctl enable sddm
-else
-    pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
-    systemctl enable gdm
-fi
+pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
+systemctl enable sddm
+# pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
+# systemctl enable gdm
 
 ### install packages ##########################################################
 PACKAGES="
