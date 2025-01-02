@@ -24,7 +24,7 @@ if [[ DESKTOP == "plasma" ]]; then
     pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
     systemctl enable sddm
 else
-    pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector
+    pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
     systemctl enable gdm
 fi
 
