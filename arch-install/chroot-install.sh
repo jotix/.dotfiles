@@ -13,10 +13,10 @@ echo LANG=en_US.UTF-8 > etc/locale.conf
 
 ### Desktop Environment ########################################################
 
-pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
-systemctl enable sddm
-# pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
-# systemctl enable gdm
+# pacman -S --noconfirm --needed plasma kde-applications kitty system-config-printer tesseract-data-eng
+# systemctl enable sddm
+pacman -S --noconfirm --needed gnome gnome-extra gnome-browser-connector ghostty
+systemctl enable gdm
 
 ### install packages ##########################################################
 PACKAGES="
