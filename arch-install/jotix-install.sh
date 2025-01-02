@@ -35,3 +35,13 @@ if [[ -b "/dev/disk/by-label/jtx-nvme" ]]; then
     flatpak override --filesystem=/mnt/jtx-nvme com.valvesoftware.Steam --user
     flatpak override --filesystem=/mnt/jtx-nvme gg.minion.Minion --user
 fi
+
+### google chrome from AUR
+cd $HOME
+mkdir -p workspace
+cd workspace
+git clone https://aur.archlinux.org/google-chrome.git
+cd google-chrome
+makepkg -s
+sudo pacman -U *.zst
+cd $HOME
