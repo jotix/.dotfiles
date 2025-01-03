@@ -12,7 +12,7 @@ dconf write /org/gnome/shell/favorite-apps "[\
     'com.google.Chrome.desktop', \
     'org.gnome.Nautilus.desktop', \
     'dev.zed.Zed.desktop', \
-    'org.gnome.Console.desktop', \
+    'com.mitchellh.ghostty.desktop', \
     'com.valvesoftware.Steam.desktop', \
     'org.gnome.Settings.desktop', \
     'com.mattjakeman.ExtensionManager.desktop', \
