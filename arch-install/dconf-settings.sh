@@ -11,7 +11,7 @@ dconf write /org/gnome/Console/last-window-size '(1200, 900)'
 dconf write /org/gnome/shell/favorite-apps "[\
     'com.google.Chrome.desktop', \
     'org.gnome.Nautilus.desktop', \
-    'dev.zed.Zed.desktop', \
+    'emacs.desktop', \
     'com.mitchellh.ghostty.desktop', \
     'com.valvesoftware.Steam.desktop', \
     'org.gnome.Settings.desktop', \
